@@ -112,6 +112,7 @@ function fetchWeatherByLocation() {
 function displayCurrentWeather(data) {
   const { name, main, weather, wind } = data;
 
+  //Show alert if temp > 40
   // Hot weather alert
   if (main.temp > 40) {
     alert("⚠ Very hot weather!");
@@ -192,5 +193,6 @@ recentCitiesDropdown.addEventListener("change", e => {
 /* === 10. On page load === */
 
 showRecentCities();
+
 
 
