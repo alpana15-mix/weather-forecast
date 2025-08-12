@@ -113,7 +113,6 @@ function fetchWeatherByLocation() {
 function displayCurrentWeather(data) {
   const { name, main, weather, wind } = data;
 
-  //Show alert if temp > 40
   // Hot weather alert
   if (main.temp > 40) {
     alert("⚠ Very hot weather!");
@@ -129,11 +128,20 @@ function displayCurrentWeather(data) {
     </div>
   `;
 
-  // Change background if rainy
-  if (weather[0].main.toLowerCase() === "rain") {
-    document.body.classList.add("bg-blue-900");
+  // 🌤 Change background based on weather condition
+  const condition = weather[0].main.toLowerCase();
+  document.body.className = ""; // remove all old classes first
+
+  if (condition.includes("clear")) {
+    document.body.classList.add("bg-yellow-200"); // sunny
+  } else if (condition.includes("cloud")) {
+    document.body.classList.add("bg-gray-400"); // cloudy
+  } else if (condition.includes("rain") || condition.includes("drizzle")) {
+    document.body.classList.add("bg-blue-900"); // rainy
+  } else if (condition.includes("snow")) {
+    document.body.classList.add("bg-blue-100"); // snowy
   } else {
-    document.body.classList.remove("bg-blue-900");
+    document.body.classList.add("bg-green-200"); // default pleasant
   }
 }
 
@@ -194,6 +202,7 @@ recentCitiesDropdown.addEventListener("change", e => {
 /* === 10. On page load === */
 
 showRecentCities();
+
 
 
 
