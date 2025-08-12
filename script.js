@@ -73,7 +73,8 @@ async function fetchWeather(city) {
     // Save to recent cities
     saveRecentCity(city);
 
-    // 5-day forecast
+    // 5-day forecast cards
+    
     const forecastRes = await fetch(`${BASE_URL}forecast?q=${city}&units=metric&appid=${API_KEY}`);
     const forecastData = await forecastRes.json();
     displayForecast(forecastData);
@@ -193,6 +194,7 @@ recentCitiesDropdown.addEventListener("change", e => {
 /* === 10. On page load === */
 
 showRecentCities();
+
 
 
 
