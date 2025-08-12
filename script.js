@@ -9,7 +9,7 @@
 */
 
 /* === 1. API details === */
-const API_KEY = "23f52157a7cc8580d3ea0946a64c09de"; // <-- Put your real OpenWeatherMap API key
+const API_KEY = "23f52157a7cc8580d3ea0946a64c09de"; 
 const BASE_URL = "https://api.openweathermap.org/data/2.5/";
 
 /* === 2. Get elements from page === */
@@ -59,7 +59,7 @@ function showRecentCities() {
   // Show dropdown
   recentCitiesDropdown.classList.remove("hidden");
 }
-
+// Function to fetch weather data from API
 /* === 4. Fetch weather by city name === */
 async function fetchWeather(city) {
   try {
@@ -189,4 +189,5 @@ recentCitiesDropdown.addEventListener("change", e => {
 });
 
 /* === 10. On page load === */
+
 showRecentCities();
