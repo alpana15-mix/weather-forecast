@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- This tells the browser that the file is HTML and uses UTF-8 characters -->
+  <meta charset="UTF-8">
+
+  <!-- This makes the page look good on mobile and desktop -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page title shown in browser tab -->
+  <title>Weather Forecast App</title>
+
+  <!-- Tailwind CSS for quick styling without writing CSS manually -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Optional: Google font for better text style -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-200 to-blue-500 min-h-screen font-[Poppins]">
+
+  <!-- ===== HEADER SECTION ===== -->
+  <header class="text-center py-6">
+   <!-- App main heading 
+    <h1 class="text-3xl font-bold text-white">🌤 Weather Forecast</h1>
+     Small description below heading 
+    <p class="text-white opacity-80">Check current and upcoming weather conditions</p>--> 
+
+  <!-- Main title of the app with a weather icon -->
+  <h1 class="text-4xl font-extrabold text-white tracking-wide drop-shadow-lg">
+    🌦️ MausamMagic
+  </h1>
+  <!-- Short description explaining the purpose of the app -->
+  <p class="text-white opacity-80">Check current and upcoming weather conditions</p>
+
+  </header>
+
+  <!-- ===== SEARCH BAR + LOCATION BUTTONS ===== -->
+  <section class="max-w-2xl mx-auto px-4 flex flex-col sm:flex-row gap-4 items-center">
+    <!-- Input box where user types city name -->
+    <input 
+      id="cityInput"
+      type="text" 
+      placeholder="Enter city name" 
+      class="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+    >
+    <!-- Search button to get weather for entered city -->
+    <button 
+      id="searchBtn"
+      class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+    >
+      Search
+    </button>
+    <!-- Button to get weather for current location -->
+    <button 
+      id="locationBtn"
+      class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
+    >
+      📍 Current
+    </button>
+  </section>
+
+  <!-- ===== RECENT CITIES DROPDOWN ===== -->
+  <section class="max-w-2xl mx-auto px-4 mt-4">
+    <!-- This dropdown will show recent searched cities (added by JavaScript) -->
+    <select 
+      id="recentCities" 
+      class="hidden w-full px-4 py-2 rounded-lg border border-gray-300"
+    >
+      <!-- Cities will be inserted here by JavaScript -->
+    </select>
+  </section>
+
+  <!-- ===== CURRENT WEATHER CARD ===== -->
+  <section class="max-w-2xl mx-auto px-4 mt-6">
+    <!-- This card will show the current weather data -->
+    <div id="currentWeather" class="bg-white rounded-xl shadow-lg p-6 text-center">
+      <!-- Default message before any city is searched -->
+      <p class="text-gray-500">Search a city to see weather data...</p>
+    </div>
+  </section>
+
+  <!-- ===== EXTENDED 5-DAY FORECAST ===== -->
+  <section class="max-w-4xl mx-auto px-4 mt-8">
+    <!-- Forecast section heading -->
+    <h2 class="text-xl font-semibold text-white mb-4">5-Day Forecast</h2>
+    <!-- Cards for each day will be added here by JavaScript -->
+    <div id="forecastContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+    </div>
+  </section>
+
+  <!-- ===== ERROR MESSAGE BOX ===== -->
+  <section class="max-w-2xl mx-auto px-4 mt-4">
+    <!-- Hidden by default; will show if there's an error -->
+    <div id="errorMessage" class="hidden bg-red-100 text-red-700 p-3 rounded-lg"></div>
+  </section>
+
+  <!-- ===== MAIN SCRIPT ===== -->
+  <!-- This file has all the JavaScript logic -->
+  <script src="script.js"></script>
+</body>
+</html>
