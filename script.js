@@ -40,7 +40,7 @@ function saveRecentCity(city) {
   // Update dropdown
   showRecentCities();
 }
-
+//Dropdown for recent searches
 // Show cities in dropdown
 function showRecentCities() {
   let cities = JSON.parse(localStorage.getItem("recentCities")) || [];
@@ -192,4 +192,5 @@ recentCitiesDropdown.addEventListener("change", e => {
 /* === 10. On page load === */
 
 showRecentCities();
+
 
