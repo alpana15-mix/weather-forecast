@@ -83,6 +83,7 @@ async function fetchWeather(city) {
 }
 
 /* === 5. Fetch weather by current location === */
+// Get weather for current location
 function fetchWeatherByLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(async position => {
@@ -191,3 +192,4 @@ recentCitiesDropdown.addEventListener("change", e => {
 /* === 10. On page load === */
 
 showRecentCities();
+
